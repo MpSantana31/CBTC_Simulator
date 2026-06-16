@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.6" prefHeight="600" prefWidth="900"
+           xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.cbtc_simulator.view.controller.SimulacaoController">
+    <VBox spacing="10" SplitPane.resizableWithParent="true">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        <Label text="Status dos Trens" style="-fx-font-weight: bold;"/>
+        <TableView fx:id="tabelaStatus" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colTrem" text="Trem" prefWidth="50"/>
+                <TableColumn fx:id="colTrecho" text="Trecho" prefWidth="100"/>
+                <TableColumn fx:id="colSentido" text="Sentido" prefWidth="60"/>
+                <TableColumn fx:id="colProgresso" text="Prog. Trecho (km)" prefWidth="80"/>
+                <TableColumn fx:id="colKmLinha" text="KM Linha" prefWidth="80"/>
+                <TableColumn fx:id="colVeloc" text="Veloc." prefWidth="55"/>
+                <TableColumn fx:id="colMaxVeloc" text="Limite" prefWidth="55"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                <TableColumn fx:id="colMA" text="MA (km)" prefWidth="60"/>
+                <TableColumn fx:id="colHeadway" text="Trem Atras" prefWidth="75"/>
+                <TableColumn fx:id="colTremAtras" text="Trem Atras" prefWidth="75"/>
+                <TableColumn fx:id="colTremFrente" text="Trem Frente" prefWidth="75"/>
+                <TableColumn fx:id="colETA" text="ETA" prefWidth="70"/>
+            </columns>
+        </TableView>
+        <Label fx:id="labelRelogio" text="Tempo: 00:00"/>
+        <Label text="Log de Eventos" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="logArea" editable="false" VBox.vgrow="ALWAYS" prefHeight="150"/>
+        <HBox spacing="10">
+            <Button text="► Tick" onAction="#avancarTick" prefWidth="80"/>
+            <Button fx:id="btnRodar" text="▶ Rodar Auto" onAction="#rodarAuto" prefWidth="110"/>
+            <Button fx:id="btnParar" text="■ Parar" onAction="#pararAuto" prefWidth="80" disable="true"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="⏹ Reset Tudo" onAction="#resetTudo" prefWidth="100"/>
+            <Button text="⏹ So Trens" onAction="#resetSoTrens" prefWidth="100"/>
+            <Separator orientation="VERTICAL"/>
+            <Label text="Vel:"/>
+            <ComboBox fx:id="comboVel" prefWidth="80"/>
+        </HBox>
+    </VBox>
+    <StackPane fx:id="visualPane" prefWidth="300" SplitPane.resizableWithParent="true">
+        <Label fx:id="labelAviso" text="Cadastre linha, estacoes e trechos" textFill="gray"
+               style="-fx-font-size: 14px;"/>
+    </StackPane>
+</SplitPane>
