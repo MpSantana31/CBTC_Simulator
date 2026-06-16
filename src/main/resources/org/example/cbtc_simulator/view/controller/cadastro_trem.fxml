@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.cbtc_simulator.view.controller.CadastroTremController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colModelo" text="Modelo" prefWidth="150"/>
+            <TableColumn fx:id="colVelMax" text="Vel. Max" prefWidth="100"/>
+            <TableColumn fx:id="colAceleracao" text="Aceleracao" prefWidth="100"/>
+            <TableColumn fx:id="colCapacidade" text="Capacidade" prefWidth="100"/>
+            <TableColumn fx:id="colComprimento" text="Comprimento" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <GridPane hgap="10" vgap="5">
+        <Label text="Modelo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="fieldModelo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Vel. Max:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="fieldVelocidadeMaxKmh" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Aceleracao:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="fieldAceleracaoMs2" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Capacidade:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="fieldCapacidade" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="Comprimento:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="fieldComprimentoM" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+    <HBox spacing="10">
+        <Button text="Salvar" onAction="#salvar"/>
+        <Button text="Editar" onAction="#editar"/>
+        <Button text="Excluir" onAction="#excluir"/>
+        <Button text="Cancelar" onAction="#cancelar"/>
+    </HBox>
+</VBox>

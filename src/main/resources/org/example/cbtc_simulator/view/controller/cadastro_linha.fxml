@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.cbtc_simulator.view.controller.CadastroLinhaController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="150"/>
+            <TableColumn fx:id="colCor" text="Cor" prefWidth="100"/>
+            <TableColumn fx:id="colVelMax" text="Vel. Max" prefWidth="100"/>
+            <TableColumn fx:id="colTipoVia" text="Tipo Via" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <GridPane hgap="10" vgap="5">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="fieldNome" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Cor Hex:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="fieldCorHex" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Vel. Max:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="fieldVelocidadeMaxKmh" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Tipo Via:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="fieldTipoVia" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    <HBox spacing="10">
+        <Button text="Salvar" onAction="#salvar"/>
+        <Button text="Editar" onAction="#editar"/>
+        <Button text="Excluir" onAction="#excluir"/>
+        <Button text="Cancelar" onAction="#cancelar"/>
+    </HBox>
+</VBox>

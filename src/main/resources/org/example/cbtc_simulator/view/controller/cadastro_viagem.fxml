@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.cbtc_simulator.view.controller.CadastroViagemController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTrem" text="Trem" prefWidth="150"/>
+            <TableColumn fx:id="colLinha" text="Linha" prefWidth="120"/>
+            <TableColumn fx:id="colHorario" text="Horario" prefWidth="80"/>
+            <TableColumn fx:id="colSentido" text="Sentido" prefWidth="80"/>
+            <TableColumn fx:id="colRealizada" text="Realizada" prefWidth="80"/>
+        </columns>
+    </TableView>
+    <GridPane hgap="10" vgap="5">
+        <Label text="Trem:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="fieldTrem" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Linha:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="fieldLinha" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Horario:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="fieldHorarioPartida" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Sentido:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="fieldIdaVolta" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    <HBox spacing="10">
+        <Button text="Salvar" onAction="#salvar"/>
+        <Button text="Editar" onAction="#editar"/>
+        <Button text="Excluir" onAction="#excluir"/>
+        <Button text="Cancelar" onAction="#cancelar"/>
+    </HBox>
+</VBox>

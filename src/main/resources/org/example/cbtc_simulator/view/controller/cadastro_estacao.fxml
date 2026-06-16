@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.cbtc_simulator.view.controller.CadastroEstacaoController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="200"/>
+            <TableColumn fx:id="colZona" text="Zona" prefWidth="150"/>
+        </columns>
+    </TableView>
+    <GridPane hgap="10" vgap="5">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="fieldNome" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Zona:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="fieldZona" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    </GridPane>
+    <HBox spacing="10">
+        <Button text="Salvar" onAction="#salvar"/>
+        <Button text="Editar" onAction="#editar"/>
+        <Button text="Excluir" onAction="#excluir"/>
+        <Button text="Cancelar" onAction="#cancelar"/>
+    </HBox>
+</VBox>
